@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Catálogo de Autos Max</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #1a1a2e; color: #eee; padding: 20px; }
+    h1 { text-align: center; color: #e74c3c; margin-bottom: 10px; font-size: 2rem; }
+    p.subtitulo { text-align: center; color: #aaa; margin-bottom: 30px; }
+    .container { max-width: 700px; margin: 0 auto; }
+    .card { background: #16213e; padding: 25px; border-radius: 10px;
+            margin-bottom: 25px; border-left: 4px solid #e74c3c; }
+    .card h3 { color: #e74c3c; margin-bottom: 15px; }
+    input { width: 100%; padding: 10px; margin: 6px 0; border-radius: 5px;
+            border: 1px solid #444; background: #0f3460; color: white; }
+    input::placeholder { color: #aaa; }
+    button { width: 100%; padding: 12px; margin-top: 10px; background: #e74c3c;
+             color: white; border: none; border-radius: 5px; font-size: 1rem;
+             font-weight: bold; cursor: pointer; }
+    button:hover { background: #c0392b; }
+    table { width: 100%; border-collapse: collapse; }
+    th { background: #e74c3c; color: white; padding: 10px; text-align: left; }
+    td { padding: 10px; border-bottom: 1px solid #333; color: #ddd; }
+    tr:hover td { background: #0f3460; }
+  </style>
+</head>
+<body>
+  <div class='container'>
+    <h1>🚗 Catálogo de Autos Max</h1>
+    <p class='subtitulo'>Sistema de registro de vehículos con MongoDB Atlas</p>
+    <div class='card'>
+      <h3>➕ Registrar Vehículo</h3>
+      <form id='formAuto'>
+        <input type='text' id='marca' placeholder='Marca (ej: Toyota)' required>
+        <input type='text' id='modelo' placeholder='Modelo (ej: Corolla)' required>
+        <input type='number' id='anio' placeholder='Año (ej: 2022)' required>
+        <input type='number' id='precio' placeholder='Precio ($)' required>
+        <input type='text' id='color' placeholder='Color (ej: Rojo)' required>
+        <button type='submit'>🚀 Guardar en la Nube</button>
+      </form>
+    </div>
+    <div class='card'>
+      <h3>📋 Vehículos Registrados</h3>
+      <table>
+        <thead>
+          <tr><th>Marca</th><th>Modelo</th><th>Año</th><th>Precio</th><th>Color</th></tr>
+        </thead>
+        <tbody id='tabla'></tbody>
+      </table>
+    </div>
+  </div>
+  <script src='app.js'></script>
+</body>
+</html>
