@@ -24,6 +24,9 @@
     th { background: #e74c3c; color: white; padding: 10px; text-align: left; }
     td { padding: 10px; border-bottom: 1px solid #333; color: #ddd; }
     tr:hover td { background: #0f3460; }
+    .acciones button { width: auto; padding: 6px 10px; margin: 2px; font-size: 0.85rem; }
+    .btn-editar { background: #f39c12; }
+    .btn-eliminar { background: #555; }
   </style>
 </head>
 <body>
@@ -31,21 +34,22 @@
     <h1>🚗 Catálogo de Autos Max</h1>
     <p class='subtitulo'>Sistema de registro de vehículos con MongoDB Atlas</p>
     <div class='card'>
-      <h3>➕ Registrar Vehículo</h3>
+      <h3 id='tituloForm'>➕ Registrar Vehículo</h3>
       <form id='formAuto'>
+        <input type='hidden' id='autoId'>
         <input type='text' id='marca' placeholder='Marca (ej: Toyota)' required>
         <input type='text' id='modelo' placeholder='Modelo (ej: Corolla)' required>
         <input type='number' id='anio' placeholder='Año (ej: 2022)' required>
         <input type='number' id='precio' placeholder='Precio ($)' required>
         <input type='text' id='color' placeholder='Color (ej: Rojo)' required>
-        <button type='submit'>🚀 Guardar en la Nube</button>
+        <button type='submit' id='btnSubmit'>🚀 Guardar en la Nube</button>
       </form>
     </div>
     <div class='card'>
       <h3>📋 Vehículos Registrados</h3>
       <table>
         <thead>
-          <tr><th>Marca</th><th>Modelo</th><th>Año</th><th>Precio</th><th>Color</th></tr>
+          <tr><th>Marca</th><th>Modelo</th><th>Año</th><th>Precio</th><th>Color</th><th>Acciones</th></tr>
         </thead>
         <tbody id='tabla'></tbody>
       </table>
